@@ -13,6 +13,10 @@ import java.util.List;
 public interface EventRepository extends JpaRepository<Event, Long> {
     List<Event> findByCategoryId(Long categoryId);
     List<Event> findByCity(String city);
+    List<Event> findByEventDateGreaterThanEqualAndEventDateLessThan(
+            LocalDateTime from,
+            LocalDateTime to
+    );
     @Query("""
             SELECT e
             FROM Event e

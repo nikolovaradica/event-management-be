@@ -8,6 +8,7 @@ import java.util.Optional;
 
 public interface FavoriteRepository extends JpaRepository<Favorite, Long> {
     List<Favorite> findByUserId(Long userId);
+    List<Favorite> findByEventId(Long eventId);
     Optional<Favorite> findByUserIdAndEventId(Long userId, Long eventId);
     boolean existsByUserIdAndEventId(Long userId, Long eventId);
 }
